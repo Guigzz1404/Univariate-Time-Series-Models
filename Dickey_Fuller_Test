@@ -11,5 +11,6 @@ aapl = aapl.rename(columns={"Adj Close": "AdjClose"})
 # Return df
 aapl_lr = np.log(aapl["AdjClose"]).diff().dropna()
 
+# Test the stationarity of the serie
 print(f'ADF pvalue: {adfuller(aapl_lr)}')
 
