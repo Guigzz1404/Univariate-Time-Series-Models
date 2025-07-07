@@ -17,6 +17,7 @@ fx_returns = fx_rates.apply(lambda x: np.log(x) - np.log(x.shift())).dropna()
 
 arch_effects = []
 
+# Test if it exists an ARCH effect through LM Test
 for cur in currencies:
 
     fxr2 = fx_returns.loc[:, cur] ** 2 # Squared return
